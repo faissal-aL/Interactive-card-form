@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+/*font : Space Grotesk  , weight 500 */
+:root {
+  /*  primary  */
+  --font1: Space Grotesk;
+  --Red-input-errors: hsl(0, 100%, 66%);
+
+  /* neutral */
+  --White: hsl(0, 0%, 100%);
+  --Lightgrayishviolet: hsl(270, 3%, 87%);
+  --Darkgrayishviolet: hsl(279, 6%, 55%);
+  --Verydarkviolet: hsl(278, 68%, 11%);
+}
+
+* {
+  font-family: var(--font1);
+}
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+body {
+  background: url(images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 40px;
+}
+
+.thanks-message {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  padding-top: 2em;
+}
+.thanks-logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70px;
+}
+#thank-you {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#thank-you-paragraph {
+  font-size: 0.8rem;
+  color: hsl(276, 7%, 58%);
+  margin: 0px;
+}
+#continue {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-infos {
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  padding-top: 2em;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+h5 {
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.date-cvc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+#month,
+#year {
+  width: 80%;
+}
+#label-exp-date {
+  grid-column: 1 / 3;
+}
+#label-cvc {
+  grid-column: 3 / 4;
+}
+#month {
+  grid-row: 2 / 3;
+}
+#year {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+#cvc {
+  grid-row: 2 / 3;
+}
+
+label {
+  text-transform: uppercase;
+}
+input {
+  box-sizing: border-box;
+  padding-left: 15px;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid var(--Lightgrayishviolet);
+}
+input:focus {
+  outline: none;
+  border: 1px solid var(--Verydarkviolet);
+}
+::placeholder {
+  font-weight: bold;
+  color: var(--Lightgrayishviolet);
+}
+p {
+  display: none;
+  font-size: 0.8rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: var(--Red-input-errors);
+}
+#date-error {
+  grid-row: 3 / 4;
+  grid-column: 1 / 3;
+}
+#cvc-error {
+  grid-column: 3 / 4;
+}
+.error-border {
+  border: 1px solid var(--Red-input-errors);
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  color: var(--Lightgrayishviolet);
+  background-color: var(--Verydarkviolet);
+  height: 40px;
+  margin-top: 30px;
+}
+button:hover,
+input:hover,
+label:hover {
+  cursor: pointer;
+}
+.card {
+  box-sizing: border-box;
+  color: var(--White);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 1em;
+  width: 447px;
+  height: 245px;
+  background: url(images/bg-card-front.png);
+  background-repeat: no-repeat;
+  justify-self: center;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 1.5em;
+}
+h4 {
+  font-weight: lighter;
+}
+#name-card {
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+#date {
+  margin-top: 0px;
+  margin-right: 20px;
+  float: right;
+}
+.card-back {
+  background: url(images/bg-card-back.png);
+  justify-self: end;
+  text-align: right;
+}
+#cvc-card {
+  margin-right: 30px;
+  margin-top: 95px;
+}
+
+@media screen and (width<800px) {
+  body {
+    background: url(images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100% 300px;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 0px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .thanks-message {
+    position: absolute;
+    top: 50%;
+  }
+
+  .card-infos {
+    width: 100%;
+    padding-top: 0em;
+  }
+  form {
+    width: 85%;
+  }
+
+  .card {
+    margin-top: -150px;
+    margin-left: -50px;
+    scale: 0.55;
+  }
+  .card-front {
+    position: relative;
+    top: 47px;
+  }
+
+  .card-back {
+    position: relative;
+    top: -125px;
+    left: 50px;
+    z-index: -1;
+  }
+}
